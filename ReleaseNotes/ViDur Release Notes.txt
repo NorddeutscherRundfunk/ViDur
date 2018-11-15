@@ -1,0 +1,62 @@
+Release Notes ViDur by Conrad
+1.1.0.23	2018-04-11
+- Auswahl "Ordner auswählen": aussagekräftige Fehlermeldung, wenn der gewählte Ordner leer ist, eingefügt
+
+1.1.0.22	2018-04-10
+- DJI-Drohnen haben einen ganzen Ordner LowRes (*\MISC\THM\[0-9]*\DJI.*MOV) der nun ausgeschlossen ist
+
+1.1.0.21	2018-01-20
+- Umstrukturierung des kompletten Codes (Geschwindigkeitsverbesserung von 125%-400%)
+- Austausch der MediaInfo.dll von 0.7.84.0 auf 17.12.0.0
+- sehr grosse Ignorieren-Liste eingefügt (LowResFiles und NoMediaFiles)
+- MP3 werden nicht mehr auf Duration gegengeprüft, da die Filegröße aufgrund von integrierten Cover-Fotos extrem schwankt
+- Umbruch bei der Darstellung des Dateipfades beim Scannen unter dem Prozentbalken eingebaut
+- Ignorieren-Liste kann mit Parameter --noexclude aufgehoben werden
+- ViDur kann von der cmd.exe mit Parameter --help gestartet werden und gibt weitere Parameter aus
+- Quellcode wird im Binary mitgespeichert
+- Quellcode kann mit Parameter --au3 extrahiert werden
+- Angabe der Scan-Dauer in txt-File und Ergebnis-Anzeige
+
+1.0.0.12	2016-12-01
+- Lizenztext für MediaInfo.dll an das Ende dieser Dokumentation gefügt
+
+1.0.0.11	2016-09-21
+- Überprüfung der Stimmigkeit der ausgelesenen Duration durch eigene Berechnung mit Filegröße und ausgelesener Bitrate
+- Angabe von Files die aufgrund dieser Überprüfung nicht stimmig sind und somit händisch zu prüfen sind
+- dabei Markierung (1) - geprüft und fehlerhaft und somit ignoriert
+- dabei Markierung (2) - konnte nicht geprüft werden, wird vertraut und gezählt
+- ignorierte Files werden nicht mehr vor dem Ergebnis angezeigt
+- dafür werden ignorierte und händisch zu prüfende Files in der Textdatei "ViDur-Ergebnis.txt" eingetragen
+- bei ignorierten oder händisch zu prüfenden Files wird diese Datei zur Anzeige geöffnet
+- die Datei "ViDur-Ergebnis.txt" wird bei jedem neuen Beschreiben überschrieben
+
+1.0.0.10	2016-04-25
+- Austausch der MediaInfo.dll von 0.7.58.0 auf 0.7.84.0
+
+1.0.0.9		2016-04-03
+- Anzeige von Frames hinzugefügt
+- Änderung des Zeitausgabeformats: 12h 35m 56s 13f statt 12:35:56:13
+- Erstellt einen ShortCut im SendTo-Ordner namens "ViDur", wenn nicht vorhanden
+
+1.0.0.8		2016-03-24
+- .mpl-Dateien werden nicht berechnet aber als ignorierte Files aufgeführt (LowRes FS700)
+- in den Dialog-Fenstern wird die Version von ViDur angezeigt
+- TrayIcon überarbeitet
+
+1.0.0.6		2016-03-22
+- .xml-Dateien werden nicht berechnet aber als ignorierte Files aufgeführt
+- verbesserte Ansicht der Informationen aus dem Clipboard
+- Code-Optimierung
+
+1.0.0.4		2014-07-25
+- man kann Dateien und/oder Ordner per drag&drop auf das Symbol des Programms ziehen und sie werden berechnet
+- es gibt die Wahl einen ganzen Ordner samt aller Unterordner zu scannen oder gezielt Files auszuwählen
+- $recycle- und recycled-Ordner werden ignoriert - damit wird nun nicht der Papierkorb einer Festplatte durchsucht
+- System Volume-Ordner einer Festplatte werden ignoriert
+- .lrv-Dateien (GoPro-LowRes) werden nicht berechnet aber als ignorierte Files aufgeführt
+- versteckte Dateien und alle puren Ordner werden nicht zu den ignorierten Files gezählt
+- ignorierte Files werden am Stück und nicht mehr einzeln angezeigt
+- das gesamte Ergebnis inklusive ignorierter Files wird in die Windows-Zwischenablage kopiert
+- Release Notes werden bei jedem Start in das ViDur-Programmverzeichnis aktualisiert
+
+This product uses MediaInfo (http://mediaarea.net/MediaInfo) library, Copyright (c) 2002-2016 MediaArea.net SARL (mailto:Info@MediaArea.net).
