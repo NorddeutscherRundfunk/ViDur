@@ -9,12 +9,6 @@
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include <TrayCox.au3>
 
-#cs ; ######################################## TESTEN
-If @UserName "vpn" Then
-	#RequireAdmin
-EndIf
-#ce ; ######################################## TESTEN
-
 If ProcessExists("ViDur.exe") > 0 Then Exit MsgBox($MB_TOPMOST, "Achtung", "ViDur muss erst beendet werden.")
 FileChangeDir(@DesktopDir) ; setzt WorkingDir auf Desktop, wo der Link immer liegen soll
 Local $sViDurLinkAll = FileFindFirstFile("vidur*.lnk")
