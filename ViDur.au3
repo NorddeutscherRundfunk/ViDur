@@ -201,7 +201,7 @@ If UBound($aFileList) > 0 Then
 	$sChoosenMedia = "Auswahl:" & @CRLF & $sChoosenMedia
 	Local $sLogMessage = "ViDur " & $sVersion & " - Ergebnis" & @CRLF & "Anzahl der Videos + Töne: " & @TAB & $iAnzahlGesamt & @CRLF & "Gesamtlänge der Videos + Töne: " & @TAB & _Zeit($iDurationGesamt) & @CRLF & @CRLF
 	$sLogMessage &=	$sChoosenMedia & @CRLF & _LogMessageSkippedFiles() & _LogMessageProveDuration() & @CRLF & @CRLF & "Dauer der Pr" & Chr(0xFC) & "fung: " & _Zeit(TimerDiff($hTimerStart), True)
-	ClipPut($sLogMessage)
+	ClipPut(StringReplace($sLogMessage, ChrW(8239), " ")) ; ersetzt ChrW(8239) - schmales Leerzeichen - mit normalem Leerzeichen für den Zwischenspeicher
 	Local $sMessageBoxMessage = "Anzahl der Videos + Töne: " & @TAB & @TAB & $iAnzahlGesamt & @CRLF & "Gesamtlänge der Videos + Töne: " & @TAB & _Zeit($iDurationGesamt) & @CRLF & @CRLF & "Dateien ohne Angabe: " & @TAB & @TAB & $g_iCounterSkippedFiles & @CRLF & @CRLF
 	$sMessageBoxMessage &= "Händisch zu prüfende Files: " & @TAB & @TAB & $g_iCounterNotProvedFiles & @CRLF & @CRLF & "Genaue Angaben sind im Windows-Zwischenspeicher zu finden." & @CRLF
 	$sMessageBoxMessage &= "Dauer der Pr" & Chr(0xFC) & "fung: " & _Zeit(TimerDiff($hTimerStart), True) & @CRLF &  @CRLF & Chr(169) & " Conrad Zelck -6675"
